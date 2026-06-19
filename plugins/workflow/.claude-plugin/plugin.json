@@ -1,0 +1,9 @@
+{
+  "name": "workflow",
+  "description": "Development workflow helpers: review the current branch against the default branch and offload context to keep working sessions focused.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lars Dreier",
+    "email": "ldreier@posteo.de"
+  }
+}

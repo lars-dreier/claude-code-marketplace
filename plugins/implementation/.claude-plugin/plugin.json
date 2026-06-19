@@ -1,0 +1,9 @@
+{
+  "name": "implementation",
+  "description": "Turn tickets and feature requests into implementation-ready artifacts: feature technical briefs and technical overviews that bridge product requirements and code.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lars Dreier",
+    "email": "ldreier@posteo.de"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "lars-marketplace",
+  "owner": {
+    "name": "Lars Dreier",
+    "email": "ldreier@posteo.de"
+  },
+  "plugins": [
+    {
+      "name": "documentation",
+      "source": "./plugins/documentation"
+    },
+    {
+      "name": "implementation",
+      "source": "./plugins/implementation"
+    },
+    {
+      "name": "workflow",
+      "source": "./plugins/workflow"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "documentation",
+  "description": "Create and maintain project documentation: build a documentation index, load relevant docs to prime context, and keep them refreshed as the code changes.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lars Dreier",
+    "email": "ldreier@posteo.de"
+  }
+}
