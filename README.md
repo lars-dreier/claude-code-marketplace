@@ -8,14 +8,13 @@ documentation, implementation planning, and development workflow.
 Add the marketplace, then install the plugins you want:
 
 ```bash
-/plugin marketplace add ldreier/claude-code-marketplace
+/plugin marketplace add lars-dreier/claude-code-marketplace
 /plugin install documentation
 /plugin install implementation
 /plugin install workflow
 ```
 
-Replace `ldreier/claude-code-marketplace` with the `owner/repo` this lives in (or a
-full git URL / local path).
+Forking? Swap in your own `owner/repo` (or a full git URL / local path).
 
 ## Plugins
 
