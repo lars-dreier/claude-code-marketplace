@@ -12,6 +12,7 @@ allowed-tools:
   - Glob
   - Grep
   - Write
+  - Bash
   - Agent
 ---
 
@@ -25,6 +26,11 @@ structure, architecture, patterns, and development workflows.
 
 The main audience for these documents is an llm/ai (specifically you, Claude Code). The resulting
 documentation should be as long and detailed as necessary but as short as possible.
+
+**Read `${CLAUDE_PLUGIN_ROOT}/references/documentation-style.md`** before writing any file. It is
+the editorial contract shared with `refresh-documentation`:
+current state only, no line numbers, no documenting of absence, no filler. A file that ignores
+it will be rewritten on the next refresh.
 
 ## Phase 1: Project Discovery
 
@@ -245,7 +251,8 @@ For the body, use clear markdown formatting:
 - Use lists for structured information
 - Use tables when comparing multiple items
 - Add examples from the actual codebase when relevant
-- Include file paths and locations for reference
+- Reference code as file path plus symbol name (`src/auth/session.ts`, `SessionStore.refresh`).
+  Never cite line numbers — they go stale on the next edit
 
 ## Important Notes
 
@@ -254,6 +261,12 @@ For the body, use clear markdown formatting:
 3. **Base documentation on actual findings** - don't invent patterns that aren't there
 4. **Skip sections that don't apply** - not all projects need all documentation
 5. **Be comprehensive but concise** - provide enough detail to be useful but avoid redundancy
+6. **Document the current state only** - no history, migration notes, version churn or commit
+   hashes; git already has those
+7. **Do not document absence** - leave out what is unused or not applicable, unless naming it
+   corrects an assumption the code actively invites
+8. **Follow `${CLAUDE_PLUGIN_ROOT}/references/documentation-style.md`** - it governs everything
+   written into `.claude/documentation/`
 
 ## Execution
 

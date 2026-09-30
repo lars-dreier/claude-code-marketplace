@@ -45,6 +45,7 @@ Development workflow helpers.
 | Skill | Purpose |
 | --- | --- |
 | `review-branch` | Review the current branch against the default branch (optionally against a spec). |
+| `verify-document` | Audit a technical document (analysis, assessment, design doc) against the codebase, claim by claim. |
 | `offload-context` | Offload context to keep a working session focused. |
 
 ## Repository layout
@@ -53,6 +54,8 @@ Development workflow helpers.
 .claude-plugin/marketplace.json     Marketplace manifest (lists the plugins)
 plugins/<name>/.claude-plugin/plugin.json   Per-plugin manifest
 plugins/<name>/skills/<skill>/SKILL.md      Auto-discovered skills
+plugins/<name>/references/<file>.md         Reference material shared by a plugin's skills,
+                                            addressed as ${CLAUDE_PLUGIN_ROOT}/references/<file>.md
 ```
 
 ## License
