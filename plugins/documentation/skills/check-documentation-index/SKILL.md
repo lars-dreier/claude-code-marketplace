@@ -21,3 +21,5 @@ guidance to help you decide what to read.
 If `.claude/documentation/index.md` does not exist, tell the user no documentation index is
 present and suggest running the **create-documentation** skill (or **update-documentation-index**
 if documentation files already exist without an index). Then stop.
+
+Never update or ask to update the documentation files on your own!
