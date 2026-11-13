@@ -22,4 +22,14 @@ If `.claude/documentation/index.md` does not exist, tell the user no documentati
 present and suggest running the **create-documentation** skill (or **update-documentation-index**
 if documentation files already exist without an index). Then stop.
 
-Never update or ask to update the documentation files on your own!
+## Documentation is read-only for this task
+
+Don't edit, create, or delete files in `.claude/documentation/`, by any means (Edit, Write, or
+Bash), even if an approved plan lists them. They are maintained only by the documentation
+skills (**refresh-documentation**, **create-documentation**, **update-documentation-index**),
+which rewrite them from the code in a consistent style; hand edits drift from that style and get
+overwritten on the next refresh.
+
+When your changes make a documentation file inaccurate, leave it as is and keep working. In
+your final summary, list each affected file and section and what is now wrong, and recommend
+running **refresh-documentation**. Don't propose doc edits in your plan.
