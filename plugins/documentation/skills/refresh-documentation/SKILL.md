@@ -53,10 +53,15 @@ If `index.md` does not exist (Read fails): treat the index as missing.
 
 `last_refresh` holds a single ISO 8601 UTC timestamp. Scope the git log with it:
 
-- Timestamp present: `git log --name-only --pretty=format: --since="<timestamp>" | sort -u | grep -v '^$'`
-- Missing or unreadable: fall back to `--since="90 days ago"`
+- Timestamp present: `git log --relative --name-only --pretty=format: --since="<timestamp>" -- . | sort -u | grep -v '^$'`
+- Missing or unreadable: same command with `--since="90 days ago"`
 
-**Cross-repo documentation:** this log only covers the current repository. If a document
+Run it from the working directory. The trailing `-- .` limits the log to the working directory, so
+a session started in a subdirectory of a larger repo (a monorepo package) does not pick up changes
+from sibling directories. `--relative` prints paths relative to the working directory, matching
+how the docs reference source files.
+
+**Cross-repo documentation:** this log only covers the working directory of the current repository. If a document
 describes sibling repos, external tooling, or CI configuration, the log gives no signal about it
 and an empty changed-file list is not evidence that the document is current. Note which
 documents those are and tell their sub-agents to verify against those external paths directly.
