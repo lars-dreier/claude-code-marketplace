@@ -17,7 +17,7 @@ what must be built and why — without redoing the investigation.
 
 **Where the brief fits.** Features are prepared in a two-document workflow before implementation:
 **feature brief** (this skill: what and why) → **technical overview** (a separate skill: where and how
-in the code) → implementation in plan mode. The technical overview turns the brief into the
+in the code) → implementation in plan mode (the implement-feature skill). The technical overview turns the brief into the
 self-contained, code-level document the implementation session works from. The brief is its input and
 a reference for humans; it is not handed to the implementer.
 

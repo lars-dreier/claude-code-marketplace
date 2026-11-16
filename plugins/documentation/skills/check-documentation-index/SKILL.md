@@ -14,11 +14,18 @@ allowed-tools:
 
 Initialize the project documentation for the current task.
 
-Read `.claude/documentation/index.md` and then read the documentation files relevant to the
-task at hand. The index lists all available documentation with descriptions and "Use when"
-guidance to help you decide what to read.
+1. Read `<working directory>/.claude/documentation/index.md` with the **Read** tool, using the
+   absolute path built from the directory Claude Code was launched in. Read the whole file;
+   don't pass `limit`.
+2. From each entry's description and "Use when" list, pick the files relevant to the task at
+   hand and read them with the **Read** tool. Independent reads go in one parallel batch.
 
-If `.claude/documentation/index.md` does not exist, tell the user no documentation index is
+Use only the Read tool for these files: no Bash (`cat`, `head`, `ls`, `find`), no Glob or Grep,
+and no searching for other `.claude/documentation/` directories in subfolders or sibling
+projects. The index is the only entry point; the files it doesn't list are not part of the
+documentation.
+
+If the Read tool reports that `index.md` does not exist, tell the user no documentation index is
 present and suggest running the **create-documentation** skill (or **update-documentation-index**
 if documentation files already exist without an index). Then stop.
 
