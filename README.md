@@ -37,6 +37,13 @@ Turn tickets and feature requests into implementation-ready artifacts.
 | --- | --- |
 | `feature-brief` | Produce a single-file feature technical brief from a ticket or description. |
 | `technical-overview` | Produce a technical overview of a feature or area. |
+| `implement-feature` | Implement a feature from its technical overview in reviewable chunks, one commit each. Invoke with `/implementation:implement-feature <overview path>`. |
+
+`implement-feature` runs only when you type the command. Run the same command to continue in a new
+session; progress is kept in `<name>-implementation-plan.md` next to the overview. Your build and test
+commands ask for permission in every chunk unless you allow them in your permission settings. Once
+invoked, the skill's hook turns git commands that commit or rewrite history into a permission prompt
+for the rest of the session (tests: `python3 -m unittest discover plugins/implementation/hooks`).
 
 ### `workflow`
 

@@ -25,7 +25,7 @@ references or corrects the brief.
 
 **Where the overview fits.** Features are prepared in a two-document workflow before implementation:
 **feature brief** (a separate skill: what and why) → **technical overview** (this skill: where and how in
-the code) → implementation in plan mode. The table shows how the two documents differ:
+the code) → implementation in plan mode (the implement-feature skill). The table shows how the two documents differ:
 
 | | Feature brief | Technical overview (this skill) |
 |---|---|---|
@@ -52,7 +52,7 @@ this file alone defines the overview, and where the two skills' rules differ, th
 
 ## When NOT to use
 - No brief / unclear acceptance criteria yet → run `feature-brief` first.
-- The user wants the actual code written → that is the plan-mode implementation step that *consumes*
+- The user wants the actual code written → that is the plan-mode implementation step (`implement-feature`) that *consumes*
   this document.
 
 ---
@@ -105,7 +105,8 @@ Read the feature brief end-to-end. Then establish the ground truth the brief can
   that code merged, in review, or unwritten? **Merged → it is the template; reuse it. Unmerged →
   flag the sequencing risk.** Record this; it dictates whether you reuse or rebuild.
 
-Record this as a dated status note at the top of the doc, because it goes stale.
+Record this as a status note at the top of the doc, with the date and the HEAD commit hash
+(`git rev-parse --short HEAD`), because it goes stale.
 
 Also extract from the brief everything the implementer needs to know *what* to build: goal and context,
 acceptance criteria, required behaviour, failure handling, what must stay unchanged, out of scope,
@@ -226,7 +227,7 @@ Implementation document for <component>. It states the requirements and maps eac
 concrete file/class/method that satisfies or must change it. Everything needed to implement is in
 this file.
 
-> **Status, re-assessed <date>.** <git/branch/dependency state: what's merged, what's written, what this
+> **Status, re-assessed <date> at `<short HEAD hash>`.** <git/branch/dependency state: what's merged, what's written, what this
 > branch points at>. Every path and member below verified against the current working tree.
 
 ## 1. Goal & context
