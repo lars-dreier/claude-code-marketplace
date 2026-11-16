@@ -11,6 +11,9 @@
 *.swo
 *~
 
+# Python
+__pycache__/
+
 # Logs
 *.log
 
